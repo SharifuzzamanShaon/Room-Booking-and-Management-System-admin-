@@ -72,7 +72,7 @@ const LoginModule = ({ route, setRoute, setAuthModal }) => {
           <InputLabel htmlFor="email">Email address</InputLabel>
           <Input
             type="email"
-            className={" text-white"}
+            className={"text-white"}
             id="email"
             value={values.email}
             onChange={handleChange}
@@ -81,17 +81,18 @@ const LoginModule = ({ route, setRoute, setAuthModal }) => {
           />
           <FormHelperText
             id="email-helper-text"
-            className=" text-white"
+            className="text-white"
           ></FormHelperText>
         </FormControl>
+
         <div>
           <FormControl fullWidth variant="outlined">
-            <InputLabel htmlFor="password" className=" text-white" place>
+            <InputLabel htmlFor="password" className="text-white">
               Password
             </InputLabel>
             <Input
-              type={`${showPassword ? "text" : "password"}`}
-              className=" text-white relative"
+              type={showPassword ? "text" : "password"}
+              className="text-white relative"
               id="password"
               value={values.password}
               onChange={handleChange}
@@ -111,25 +112,37 @@ const LoginModule = ({ route, setRoute, setAuthModal }) => {
                 onClick={() => setShowPassword(true)}
               />
             )}
-
             <FormHelperText
               id="password-helper-text"
-              className=" text-white"
+              className="text-white"
             ></FormHelperText>
           </FormControl>
         </div>
+
         <Button type="submit" variant="contained" color="primary">
           Login
         </Button>
-        <p className=" text-black">
-          Don't have account ?{" "}
+
+        <p className="text-black">
+          Don't have an account?{" "}
           <span
             className="hyper cursor-pointer text-blue-800 dark:border-b-slate-100 border-b border-blue-800"
             onClick={() => setRoute("signUp")}
           >
-            {"  "} Sign-up
+            Sign-up
           </span>
         </p>
+
+        {/* Admin Login Info Section */}
+        <div className="mt-4 p-2 border border-gray-300 rounded bg-gray-100">
+          <h3 className="font-semibold text-black">Admin Login Info:</h3>
+          <p className="text-black">
+            Email: <span className="font-medium">admin@gmail.com</span>
+          </p>
+          <p className="text-black">
+            Password: <span className="font-medium">admin</span>
+          </p>
+        </div>
       </form>
     </>
   );
