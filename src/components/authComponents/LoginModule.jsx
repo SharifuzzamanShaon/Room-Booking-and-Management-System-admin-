@@ -39,26 +39,30 @@ const LoginModule = ({ route, setRoute, setAuthModal }) => {
         },
         withCredentials: true,
       };
+      const loadingToast = toast.loading("Logging in...");
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/auth/login`,
         values,
         config
       );
+      toast.dismiss(loadingToast);
       if (
         response.data?.success === true &&
         response.data?.user.role === "admin"
       ) {
         toast.success("Login Success");
+        router.push("/dashboard");
         setAuthModal(false);
         dispatch({ type: "SET_USER", payload: response.data });
-        router.push("/dashboard");
       } else {
         toast.error("You are not authorized");
-        return;
       }
     } catch (error) {
+      toast.dismiss();
       if (error.response?.data?.message) {
-        toast.error(error.response?.data?.message);
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("An error occurred during login");
       }
     }
   };
@@ -122,17 +126,6 @@ const LoginModule = ({ route, setRoute, setAuthModal }) => {
         <Button type="submit" variant="contained" color="primary">
           Login
         </Button>
-
-        <p className="text-black">
-          Don't have an account?{" "}
-          <span
-            className="hyper cursor-pointer text-blue-800 dark:border-b-slate-100 border-b border-blue-800"
-            onClick={() => setRoute("signUp")}
-          >
-            Sign-up
-          </span>
-        </p>
-
         {/* Admin Login Info Section */}
         <div className="mt-4 p-2 border border-gray-300 rounded bg-gray-100">
           <h3 className="font-semibold text-black">Admin Login Info:</h3>

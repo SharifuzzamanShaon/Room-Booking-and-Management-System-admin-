@@ -20,8 +20,9 @@ export default function UserProfile() {
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
     toast.success("Your are logged out");
+    router.push("/");
   };
- 
+
   return (
     <div>
       <button
