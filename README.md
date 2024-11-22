@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Room Booking and Management System - Admin Panel  
 
-## Getting Started
+The **Admin Panel** for the Room Booking and Management System allows administrators to manage room bookings efficiently. Admins can approve or cancel booking requests and monitor the overall system activity.  
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Demo  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Check out the live admin panel here: [Room Booking and Management System - Admin Panel](https://room-booking-and-management-system-admin-60xs.onrender.com)  
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features  
 
-## Learn More
+- **Approve Bookings**: Admins can review and approve room booking requests.  
+- **Cancel Bookings**: Admins can cancel any booking to free up the room.  
+- **Manage System**: Provides an overview of the booking status for all rooms.  
+- **Secure Authentication**: Only authorized admins can access the panel using token-based authentication.  
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies Used  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Frontend**:  
+  - React.js  
+  - Tailwind CSS  
+- **Backend**:  
+  - Node.js, Express.js  
+- **Database**:  
+  - MongoDB (or specify the database used)  
+- **Date & Time Management**:  
+  - [Day.js](https://day.js.org/)  
+- **Authentication**:  
+  - Token-based authentication  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Installation  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/your-username/room-booking-system-admin.git
+   cd room-booking-system-admin
